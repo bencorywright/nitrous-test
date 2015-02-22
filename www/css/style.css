@@ -5,3 +5,8 @@
   background-color: inherit; }
   .modal-backdrop.active {
     background-color: inherit; }
+    
+.dark-menu, .dark-menu .item-content {
+  background: #333;
+  color: white;
+}
