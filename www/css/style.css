@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.modal-backdrop {
+  -webkit-transition: none;
+  transition: none;
+  background-color: inherit; }
+  .modal-backdrop.active {
+    background-color: inherit; }
