@@ -68,4 +68,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
-});
+})
+
+.directive('stripeForm', ['$log', function($log) {
+  return function(scope, elem, attrs) {
+    console.log('x');
+    var form =  document.createElement("form");;
+    form.action = "charge";
+    form.method = "POST";
+    var script =  document.createElement("script");
+    script.src = "https://checkout.stripe.com/checkout.js";
+    script.className = "stripe-button";
+    script.setAttribute("data-key", "pk_test_6pRNASCoBOKtIshFeQd4XMUh");
+    script.setAttribute("data-image", "square-image.png");
+    script.setAttribute("data-name", "Demo Site");
+    script.setAttribute("data-description", "2 widgets ($20.00)");
+    script.setAttribute("data-amount", "2000");
+    
+    form.appendChild(script);
+
+    elem.append(angular.element(form));
+  };
+}]);
